@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="jar" name="Create Jar for Project dbusmenu-swing with thirty part libraries" basedir=".">
+	<target name="jar">
+		<mkdir dir="build" />
+		<javac includeantruntime="false" srcdir="src" includes="lib/*jar" destdir="build" source="1.6" />
+
+		<mkdir dir="dest" />
+
+		<jar destfile="dest/dbusmenu-0.1.jar">
+			<fileset dir="build" />
+			<zipfileset excludes="META-INF/*.SF" src="lib/dbus-java-2.7.jar" />
+			<zipfileset excludes="META-INF/*.SF" src="lib/libmatthew-java-0.8.jar" />
+		</jar>
+	</target>
+</project>
